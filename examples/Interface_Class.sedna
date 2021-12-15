@@ -1,0 +1,36 @@
+import Int
+import String
+import Linux.StdStm
+
+interf I {
+	foo()
+}
+
+class X impl I {
+	foo() {
+		StdStm<Out>.Println("foo impl")
+	}
+}
+
+class Y inher X {
+	foo() {
+		StdStm<Out>.Println("derived")
+	}
+
+	bar() {
+		StdStm<Out>.Println("bar")
+	}
+}
+
+main() {
+	X x = new X()
+	x.foo()
+
+	Y y = new Y()
+	y.foo()
+	y.bar()
+
+	I i = new X()
+	i = new Y()
+	i.foo()
+}

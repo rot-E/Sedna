@@ -1,0 +1,43 @@
+import Int
+import String
+import Linux.StdStm<Out>.Println
+
+main() {
+	Z<Int, String> z = Z<String, Int>(3)
+	z.set("hello")
+
+	try {
+		z.print()
+	} catch (E e) {
+		Println(e)
+	}
+}
+
+excep E {}
+
+class Z<T1, T2> {
+	private T1 value
+	private T2 value2
+
+	Z(T2 t2) {
+		this.value2 = t2
+		StdStm<Out>.Println("Constructing with " + val)
+	}
+
+	set(T1 val) {
+		value := val
+	}
+
+	(T1, T2) get() {
+		ret (value, value2)
+	}
+
+	print() E {
+		if value == null || value2 == null {
+			throw E
+		}
+
+		StdStm<Out>.Println(value)
+		StdStm<Out>.Println(value2)
+	}
+}

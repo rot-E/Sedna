@@ -1,0 +1,31 @@
+import Int
+import String
+import Linux.StdStm<Out>.Println
+
+main() {
+	Println( M.mulS(3, M.add(1, 2)) )
+	(Int, Int) pair = swapT((1, 2))
+	Println( updateT(pair, 13) )
+}
+
+mod M {
+	Int add(Int a, Int b) {
+		ret a + b
+	}
+
+	Int mul(Int a, Int b) {
+		ret a * b
+	}
+
+	String mulS(Int a, Int b) {
+		ret mul(a, b)
+	}
+
+	(Int, Int) swapT((Int, Int) (a, b)) {
+		ret (b, a)
+	}
+
+	(Int, Int) updateT((Int, Int) p(a, b), Int cnt) {
+		ret (p.a + cnt, p.b + cnt)
+	}
+}

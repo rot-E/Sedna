@@ -1,0 +1,37 @@
+import Int
+import String
+import Linux.StdStm
+import Linux.Proc
+
+main() {
+	Int a = StdStm<In>.Readln()
+
+	for Int b = 0; b < 100; b++ {
+		a += b
+	}
+
+	if a \= 5050 {
+		StdStm<Err>.Println("a \= 5050, a = " + a)
+		Proc.Exit(Proc.Exit.FAILURE)
+	} else {
+		StdStm<Out>.Println(a)
+	}
+
+	while a > 0 {
+		a--
+	}
+
+	match a {
+		0 => {
+			StdStm<Out>.Println("ZERO!")
+		}
+
+		1 => {
+			StdStm<Out>.Println("ONE!")
+		}
+
+		_ => {
+			StdStm<Out>.Println("a /= 0, 1 :(")
+		}
+	}
+}
