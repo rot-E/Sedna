@@ -8,12 +8,19 @@ main() {
 
 	try {
 		z.print()
-	} catch (E e) {
+	} E e <= catch {
 		Println(e)
+		Println(e.const3())
+	} Exception ex <= catch {
+		Println(":(")
 	}
 }
 
-excep E {}
+excep E {
+	const3() {
+		ret 3
+	}
+}
 
 class Z<T1, T2> {
 	private T1 value
