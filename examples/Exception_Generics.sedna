@@ -32,7 +32,7 @@ class Z<T1, T2> {
 	}
 
 	set(T1 val) {
-		value := val
+		value = val
 	}
 
 	(T1, T2) get() {
