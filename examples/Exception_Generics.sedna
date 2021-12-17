@@ -39,7 +39,7 @@ class Z<T1, T2> {
 		ret (value, value2)
 	}
 
-	print() E {
+	print() throws E {
 		if value == null || value2 == null {
 			throw E
 		}
